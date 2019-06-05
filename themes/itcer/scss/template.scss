@@ -1,0 +1,113 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'mixins';
+@import 'foundation';
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+//Layout
+
+.outer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.section {
+  margin: 0 auto;
+  max-width: $global-width;
+}
+
+.page-wrap {
+  margin: 0 auto;
+  max-width: rem-calc(1280);
+  padding: $grid-column-gutter / 4;
+}
+//Variablen
+
+// Menu
+// Menu Button
+
+.menu-button {
+  @include size($grid-column-gutter*1.5);
+  background: $blue;
+  cursor: pointer;
+
+  &.active {
+    .menu-button-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+      &::before {
+        opacity: 0;
+        top: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+      }
+
+      &::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+}
+
+.menu-button-box {
+  @include size(rem-calc(70));
+  display: inline-block;
+  padding: rem-calc(16);
+  position: relative;
+  transition: transform 0.25s;
+}
+
+.menu-button-inner {
+  display: block;
+  margin-top: rem-calc(-40);
+  top: 100%;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &,
+  &::after,
+  &::before {
+    background-color: $dark-blue;
+    border-radius: rem-calc(2);
+    height: rem-calc(5);
+    position: absolute;
+    transition: transform .25s ease;
+    width: rem-calc(40);
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    right: rem-calc(0);
+    top: rem-calc(11);
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
+
+  &::after {
+    bottom: rem-calc(11);
+    right: rem-calc(0);
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+}
+
+.menu-button-label {
+  color: $dark-blue;
+  display: block;
+  margin-top: -$grid-column-gutter / 3.75;
+}
