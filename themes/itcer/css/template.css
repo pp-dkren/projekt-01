@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 /**
  * Foundation for Sites by ZURB
  * Version 6.4.3
@@ -445,7 +446,7 @@ body {
   margin: 0;
   padding: 0;
   background: #ffffff;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #000000;
@@ -555,10 +556,10 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: normal;
-  color: #000000;
+  color: #0D164C;
   text-rendering: optimizeLegibility; }
   h1 small, .h1 small,
   h2 small, .h2 small,
@@ -570,13 +571,13 @@ h6, .h6 {
     color: #969895; }
 
 h1, .h1 {
-  font-size: 1.66667rem;
+  font-size: 1.33333rem;
   line-height: 1.25;
   margin-top: 0;
   margin-bottom: 1rem; }
 
 h2, .h2 {
-  font-size: 1.66667rem;
+  font-size: 1.11111rem;
   line-height: 1.25;
   margin-top: 0;
   margin-bottom: 1rem; }
@@ -619,18 +620,18 @@ h4, .h4 {
 
 a {
   line-height: inherit;
-  color: #033F67;
+  color: #0D164C;
   text-decoration: underline;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #033659;
+    color: #0b1341;
     text-decoration: none; }
   a img {
     border: 0; }
 
 hr {
   clear: both;
-  max-width: 106.66667rem;
+  max-width: 80rem;
   height: 0;
   margin: 1.11111rem auto;
   border-top: 0;
@@ -1237,20 +1238,60 @@ select {
   max-width: 100%;
   overflow: hidden; }
 
-.section {
-  margin: 0 auto;
-  max-width: 106.66667rem; }
-
 .page-wrap {
   margin: 0 auto;
-  max-width: 71.11111rem;
-  padding: 0.83333rem; }
+  max-width: 93.33333rem; }
+
+.section {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 1.66667rem 0.83333rem; }
+
+.light-blue {
+  background: #8AB8E0; }
+
+img {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+h1 {
+  bottom: 10%;
+  color: #ffffff;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 1.66667rem 0.83333rem;
+  position: absolute; }
+
+h2,
+h3 {
+  font-weight: bold;
+  margin-bottom: 0; }
+
+ul {
+  margin-left: 0; }
+
+li {
+  color: #0D164C;
+  list-style: none; }
+
+a {
+  text-decoration: underline; }
+
+header {
+  padding: 1.66667rem 0.83333rem; }
+
+.menu-nav {
+  border-bottom: 1px solid #0D164C; }
 
 .menu-button {
   width: 5rem;
   height: 5rem;
-  background: #B0D2DF;
-  cursor: pointer; }
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0; }
   .menu-button.active .menu-button-inner {
     -webkit-transform: rotate(225deg);
         -ms-transform: rotate(225deg);
@@ -1294,7 +1335,7 @@ select {
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
-    background-color: #033F67;
+    background-color: #27357C;
     border-radius: 0.11111rem;
     height: 0.27778rem;
     position: absolute;
@@ -1320,6 +1361,45 @@ select {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
 .menu-button-label {
-  color: #033F67;
+  color: #27357C;
   display: block;
   margin-top: -0.88889rem; }
+
+#main-menu a {
+  display: block;
+  padding: 0.83333rem 1.66667rem; }
+  #main-menu a:focus, #main-menu a:hover {
+    background: #0D164C;
+    color: #ffffff; }
+
+.lang-nav {
+  margin-bottom: 3.33333rem; }
+
+#lang-menu li {
+  display: inline-block;
+  margin: 0 0.55556rem; }
+
+.logo {
+  border-top: 1px solid #27357C;
+  margin: 0 auto; }
+
+.hero {
+  position: relative; }
+  .hero span {
+    font-size: 1.55556rem;
+    font-weight: bold; }
+
+main .text-box {
+  margin: 3.33333rem 0;
+  padding: 1.66667rem;
+  text-align: center; }
+
+main span {
+  display: block;
+  font-weight: normal;
+  margin-bottom: 1.11111rem;
+  margin-top: 0.55556rem; }
+
+main li::before {
+  content: "»";
+  margin-right: 0.83333rem; }

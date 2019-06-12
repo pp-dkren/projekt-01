@@ -20,25 +20,74 @@
   overflow: hidden;
 }
 
+.page-wrap {
+  margin: 0 auto;
+  max-width: rem-calc(1680);
+}
+
 .section {
   margin: 0 auto;
   max-width: $global-width;
+  padding: $grid-column-gutter/2 $grid-column-gutter/4;
 }
 
-.page-wrap {
+.light-blue {
+  background: $light-blue;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+h1 {
+  bottom: 10%;
+  color: $white;
   margin: 0 auto;
-  max-width: rem-calc(1280);
-  padding: $grid-column-gutter / 4;
+  max-width: $global-width;
+  padding: $grid-column-gutter/2 $grid-column-gutter/4;
+  position: absolute;
+}
+
+h2,
+h3 {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+ul {
+  margin-left: 0;
+}
+
+li {
+  color: $paragraph-color;
+  list-style: none;
+}
+
+a {
+  text-decoration: underline;
 }
 //Variablen
 
+// Header
+
+header {
+  padding: $grid-column-gutter/2 $grid-column-gutter/4;
+}
 // Menu
+.menu-nav {
+  border-bottom: 1px solid $dark-blue;
+}
 // Menu Button
 
 .menu-button {
   @include size($grid-column-gutter*1.5);
-  background: $blue;
   cursor: pointer;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   &.active {
     .menu-button-inner {
@@ -79,7 +128,7 @@
   &,
   &::after,
   &::before {
-    background-color: $dark-blue;
+    background-color: $blue;
     border-radius: rem-calc(2);
     height: rem-calc(5);
     position: absolute;
@@ -107,7 +156,77 @@
 }
 
 .menu-button-label {
-  color: $dark-blue;
+  color: $blue;
   display: block;
   margin-top: -$grid-column-gutter / 3.75;
+}
+
+#main-menu {
+  a {
+    display: block;
+    padding: $grid-column-gutter/4 $grid-column-gutter/2;
+
+    &:focus,
+    &:hover {
+      background: $dark-blue;
+      color: $white;
+    }
+  }
+}
+
+// Lang Menü
+
+.lang-nav {
+  margin-bottom: $grid-column-gutter;
+}
+
+#lang-menu {
+  li {
+    display: inline-block;
+    margin: 0 $grid-column-gutter/6;
+  }
+}
+// Logo
+
+.logo {
+  border-top: 1px solid $blue;
+  margin: 0 auto;
+}
+// Hero
+
+.hero {
+  position: relative;
+
+  span {
+    font-size: rem-calc(28);
+    font-weight: bold;
+  }
+}
+
+
+// Inhalt
+main {
+  .text-box {
+    margin: $grid-column-gutter 0;
+    padding: $grid-column-gutter/2;
+    text-align: center;
+  }
+
+  span {
+    display: block;
+    font-weight: normal;
+    margin-bottom: $grid-column-gutter/3;
+    margin-top: $grid-column-gutter/6;
+  }
+
+  // ul {
+  //   margin-top: $grid-column-gutter/2;
+  // }
+
+  li {
+    &::before {
+      content: "»";
+      margin-right: $grid-column-gutter/4;
+    }
+  }
 }
