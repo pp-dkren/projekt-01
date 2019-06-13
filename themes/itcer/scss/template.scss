@@ -31,8 +31,16 @@
   padding: $grid-column-gutter/2 $grid-column-gutter/4;
 }
 
+.center {
+  text-align: center;
+}
+
 .light-blue {
   background: $light-blue;
+}
+
+.green {
+  background: $green;
 }
 
 img {
@@ -50,9 +58,18 @@ h1 {
   position: absolute;
 }
 
-h2,
 h3 {
+  color: $white;
   font-weight: bold;
+  margin-bottom: $grid-column-gutter/2;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: $grid-column-gutter/2;
+}
+
+p {
   margin-bottom: 0;
 }
 
@@ -71,14 +88,45 @@ a {
 //Variablen
 
 // Header
-
 header {
-  padding: $grid-column-gutter/2 $grid-column-gutter/4;
+  padding: $grid-column-gutter/4;
 }
+
 // Menu
-.menu-nav {
+#main-menu {
   border-bottom: 1px solid $dark-blue;
+  padding: $grid-column-gutter/4 0;
+
+  a {
+    display: block;
+    font-size: rem-calc(22);
+    padding: $grid-column-gutter/4;
+
+    &:focus,
+    &:hover {
+      background: $dark-blue;
+      color: $white;
+    }
+  }
 }
+
+// Lang Menü
+.lang-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: $grid-column-gutter/2;
+}
+
+#lang-menu {
+  li {
+    display: inline-block;
+  }
+
+  a {
+    padding: $grid-column-gutter/4;
+  }
+}
+
 // Menu Button
 
 .menu-button {
@@ -161,39 +209,16 @@ header {
   margin-top: -$grid-column-gutter / 3.75;
 }
 
-#main-menu {
-  a {
-    display: block;
-    padding: $grid-column-gutter/4 $grid-column-gutter/2;
-
-    &:focus,
-    &:hover {
-      background: $dark-blue;
-      color: $white;
-    }
-  }
-}
-
-// Lang Menü
-
-.lang-nav {
-  margin-bottom: $grid-column-gutter;
-}
-
-#lang-menu {
-  li {
-    display: inline-block;
-    margin: 0 $grid-column-gutter/6;
-  }
-}
 // Logo
-
 .logo {
-  border-top: 1px solid $blue;
-  margin: 0 auto;
-}
-// Hero
+  width: 100%;
 
+  img {
+    max-width: rem-calc(200);
+  }
+}
+
+// Hero
 .hero {
   position: relative;
 
@@ -206,27 +231,127 @@ header {
 
 // Inhalt
 main {
-  .text-box {
-    margin: $grid-column-gutter 0;
-    padding: $grid-column-gutter/2;
-    text-align: center;
-  }
-
   span {
     display: block;
     font-weight: normal;
-    margin-bottom: $grid-column-gutter/3;
-    margin-top: $grid-column-gutter/6;
+    margin-bottom: $grid-column-gutter/2;
   }
 
-  // ul {
-  //   margin-top: $grid-column-gutter/2;
-  // }
-
   li {
+    margin-bottom: $grid-column-gutter/4;
     &::before {
       content: "»";
       margin-right: $grid-column-gutter/4;
     }
+  }
+}
+
+// Boxen
+.text-box {
+  margin: $grid-column-gutter/2 0;
+  padding: $grid-column-gutter/2;
+
+  p {
+    margin-bottom: $grid-column-gutter/3;
+  }
+}
+
+.img-box {
+  margin-bottom: $grid-column-gutter;
+  position: relative;
+
+  p {
+    bottom: 5%;
+    color: $white;
+    position: absolute;
+  }
+}
+
+.img-text-box {
+  margin-bottom: $grid-column-gutter;
+  margin-top: $grid-column-gutter;
+  padding: $grid-column-gutter/4;
+
+  .content {
+    margin: 0 $grid-column-gutter/4;
+    text-align: left;
+  }
+
+  h2,
+  h4,
+  p,
+  li {
+    color: $white;
+  }
+
+  h4 {
+    margin-top: $grid-column-gutter/2;
+  }
+
+  img {
+  //   width: calc(100% + #{$grid-column-gutter/2});
+  //   margin-left: -$grid-column-gutter/4;
+  //   margin-right: -$grid-column-gutter/4;
+    margin-bottom: $grid-column-gutter/2;
+  }
+}
+
+@include breakpoint(large) {
+  .img-text-box .has-3-columns {
+    grid-template-columns: repeat(3, 33.33% [col]);
+
+    .wp-block-column {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+
+// Grid
+@include breakpoint(large) {
+  .wp-block-columns {
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: $grid-column-gutter/2 $grid-column-gutter/4;
+  }
+
+  .has-2-columns {
+    grid-template-columns: repeat(2, 50% [col]);
+
+    .wp-block-column {
+      margin: 0 $grid-column-gutter/4;
+
+      &:first-child {
+        margin-left: -$grid-column-gutter/4;
+      }
+
+      &:last-child {
+        margin-right: -$grid-column-gutter/4;
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  border-top: 1px solid $dark-blue;
+
+  .wp-block-columns {
+    .wp-block-column {
+      margin: $grid-column-gutter/2 0;
+    }
+  }
+
+  p a {
+    color: $green;
+  }
+
+  ul li {
+    margin: $grid-column-gutter/4 0;
+  }
+
+  .copy {
+    color: $gray;
   }
 }

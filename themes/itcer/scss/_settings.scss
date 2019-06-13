@@ -53,15 +53,12 @@ $foundation-palette: ( primary: #1779ba, secondary: #767676, success: #3adb76, w
 $black: #000000;
 $white: #ffffff;
 $light-gray: #eeeeee;
-$gray: #969895;
+$gray: #6e7078;
 $dark-gray: #444444;
 $light-blue: #8AB8E0;
 $blue: #27357C;
 $dark-blue: #0D164C;
-$peach: #e46e17;
-$red: #F40C21;
-$green: #c5d440;
-$cyan: #157CB0;
+$green: #4AA441;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Roboto', sans-serif;
@@ -104,8 +101,8 @@ $header-lineheight: 1.25;
 $header-margin-bottom: 1rem;
 $header-styles: (
   small: (
-  'h1': ('font-size': 24),
-  'h2': ('font-size': 20),
+  'h1': ('font-size': 28),
+  'h2': ('font-size': 22),
   'h3': ('font-size': 22),
   'h4': ('font-size': 20), ),
 
